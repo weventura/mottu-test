@@ -1,0 +1,10 @@
+.c-toolbar {
+    background-color: var(--color-core-foreground);
+    padding: var(--measure-spacing-xs) var(--measure-spacing-l);
+    display: flex;
+    justify-content: space-between;
+    &__logo {
+        width: 114px;
+        height: 64px;
+    }
+}

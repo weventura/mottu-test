@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Creepster';
+    src: url('/fonts/Creepster/Creepster-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Poppins", sans-serif; background-color: var(--color-core-background); }

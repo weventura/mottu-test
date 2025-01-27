@@ -1,0 +1,97 @@
+@import '../../../styles/typography';
+
+.c-card {
+    width: 100%;
+    min-width: 192px;
+    height: 100%;
+    gap: var(--measure-spacing-null);
+    border-radius: var(--measure-radius-s);
+    border: 1px solid var(--color-core-border);
+    position: relative;
+    &__image {
+        width: 100%;
+        min-height: 224px;
+        border-radius: var(--measure-radius-s) var(--measure-radius-s) 0 0;
+        &--skeleton {
+            background: var(--color-core-background);
+            min-height: 224px;
+            border-radius: var(--measure-radius-s) var(--measure-radius-s) 0 0;
+            animation: skeleton-loading 2s infinite ease-in-out;
+        }
+    }
+    &__content {
+        padding: var(--measure-spacing-s);
+        gap: var(--measure-spacing-xxs);
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        font-family: Creepster;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        margin: 0;
+        color: var(--primary-color);
+        &--skeleton {
+            background: var(--color-core-background);
+            width: 80%;
+            height: 24px;
+            border-radius: var(--measure-radius-s);
+            animation: skeleton-loading 2s infinite ease-in-out;
+        }
+    }
+    &__subtitle {
+        @include body-bold-m;
+        color: var(--color-core-content-low);
+        margin: 0;
+        &:empty {
+            display: none;
+        }
+        &--skeleton {
+            background: var(--color-core-background);
+            width: 60%;
+            height: 16px;
+            border-radius: var(--measure-radius-s);
+            animation: skeleton-loading 2s infinite ease-in-out;
+
+            &:nth-child(2) {
+                width: 40%;
+            }
+            &:empty {
+                display: block;
+            }
+        }
+    }
+    &__favorite-box {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: var(--measure-sizing-xxxl);
+        height: var(--measure-sizing-xxxl);
+        gap: 0px;
+        border-radius: var(--measure-radius-null) var(--measure-radius-s) var(--measure-radius-null) var(--measure-radius-circle);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-color);
+        cursor: pointer;
+        transition: all 0.3s;
+        &--active, &:hover {
+            background-color: var(--primary-color);
+            color: var(--color-neutral-content-onSource);
+        }
+    }
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: var(--accent-darker-color);
+    }
+    50% {
+        background-color: var(--color-core-background);
+    }
+    100% {
+        background-color: var(--accent-darker-color);
+    }
+}

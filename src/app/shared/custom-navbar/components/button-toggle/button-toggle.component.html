@@ -1,0 +1,10 @@
+<a mat-raised-button color="primary" routerLink="" routerLinkActive="c-button--active" [routerLinkActiveOptions]="{ exact: true }" [class]="['c-button', 'c-button--start']">
+    <mat-icon class="c-icon">home</mat-icon>
+    Início
+</a>
+<a mat-raised-button color="primary" routerLink="/favorites" routerLinkActive="c-button--active" [class]="['c-button', 'c-button--end']">
+    <mat-icon class="c-button__icon">favorite</mat-icon>
+    Favoritos
+    @let fav = (favorites$ | async);
+    <span [class]="['c-tag', fav === 0 && 'c-tag--empty']">{{ fav }}</span>
+</a>
