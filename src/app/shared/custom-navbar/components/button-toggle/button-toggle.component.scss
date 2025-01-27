@@ -1,0 +1,69 @@
+@import '../../../../../styles/typography.scss';
+
+:host {
+    display: flex;
+}
+
+.c-button {
+    @include button-m;
+    display: flex;
+    flex-direction: row;
+    gap: var(--measure-spacing-xs);
+    padding: var(--measure-spacing-xxs) var(--measure-spacing-m)!important;
+    color: var(--color-neutral-content)!important;
+    border: 1px solid var(--color-core-border)!important;
+    background-color: transparent!important;
+    &--start {
+        border-radius: 12px 0 0 12px;
+    }
+    &--end {
+        border-radius: 0 12px 12px 0;
+    }
+    &__icon {
+        margin: 0!important;
+        font-size: 16px!important;
+        height: 16px!important;
+        width: 16px!important;
+    }
+    ::ng-deep {
+        .mdc-button__label {
+            display: flex;
+            flex-direction: row;
+            gap: var(--measure-spacing-xs);
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .c-tag {
+        @include body-bold-s;
+        padding: var(--measure-spacing-xxxs) var(--measure-spacing-xxxs) var(--measure-spacing-xxxs);
+        border-radius: var(--measure-radius-circle);
+        width: var(--measure-sizing-s);
+        height: var(--measure-sizing-s);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--primary-dark-contrast);
+        background-color: var(--primary-color);
+        color: var(--color-neutral-content-onSource);
+        &--empty {
+            border: 1px solid var(--color-core-border);
+            background-color: transparent;
+            color: var(--color-neutral-content);
+        }
+    }
+    &--active {
+        color: var(--primary-dark-contrast)!important;
+        border: var(--measure-radius-null);
+        background-color: var(--primary-color)!important;
+        .c-tag {
+            border: 1px solid var(--color-core-border);
+            background-color: var(--color-core-foreground);
+            color: var(--primary-color);
+            &--empty {
+                background-color: transparent;
+                color: var(--primary-dark-contrast);
+            }
+        }
+    }
+}

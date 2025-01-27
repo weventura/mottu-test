@@ -1,0 +1,40 @@
+@use '@angular/material' as mat;
+@import './colors.scss';
+@import './spacing.scss';
+@import './border.scss';
+@import './sizing.scss';
+@import './general.scss';
+
+@include mat.core();
+
+$mat-primary: (
+  100: var(--primary-color),
+  700: var(--primary-color),
+  contrast: (
+    100: var(--primary-dark-contrast),
+    700: var(--primary-dark-contrast),
+  )
+);
+
+$mat-accent: (
+  100: var(--accent-lighter-color),
+  500: var(--accent-color),
+  700: var(--accent-darker-color),
+  contrast: (
+    100: var(--primary-dark-contrast),
+    500: var(--primary-light-contrast),
+    700: var(--primary-light-contrast),
+  )
+);
+
+$primary: mat.m2-define-palette($mat-primary, 100);
+$accent: mat.m2-define-palette($mat-accent, 500);
+
+$theme: mat.m2-define-dark-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+  )
+));
+
+@include mat.all-component-themes($theme);

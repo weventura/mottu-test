@@ -1,0 +1,9 @@
+<div class="c-container">
+    <app-header></app-header>   
+    <app-common-list 
+        [characters]="(characters$ | async) || []" 
+        (onFavoriteClick)="onFavoriteClick($event)"
+        [isLoading]="(isLoading$ | async) || false"
+        [isLoadingMore]="(isLoadingMore$ | async) || false">
+    </app-common-list>
+</div>

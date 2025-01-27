@@ -1,0 +1,20 @@
+<section class="c-card">
+    @if(!isLoading()) {
+        <div [class]="['c-card__favorite-box', isFavorite() && 'c-card__favorite-box--active']" (click)="onToggleFavorite()">
+            <mat-icon class="'c-card__fav-icon'">{{ isFavorite() ? 'favorite' : 'favorite_outline' }}</mat-icon>
+        </div>
+        <img class="c-card__image" [src]="image()" alt="">
+        <div class="c-card__content">
+            <p class="c-card__title">{{ title() }}</p>
+            <p class="c-card__subtitle">{{ subtitle() }}</p>
+            <p class="c-card__subtitle">{{ description() }}</p>
+        </div>
+    } @else {
+        <div class="c-card__image c-card__image--skeleton"></div>
+        <div class="c-card__content">
+            <div class="c-card__title c-card__title--skeleton"></div>
+            <div class="c-card__subtitle c-card__subtitle--skeleton"></div>
+            <div class="c-card__subtitle c-card__subtitle--skeleton"></div>
+        </div>
+    }
+</section>

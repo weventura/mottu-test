@@ -1,0 +1,7 @@
+<section class="c-container">
+    <span class="c-container__title">{{ isFavorite() ? 'Parece que você ainda não tem favoritos' : 'Nada foi encontrado' }}</span>
+    <span class="c-container__subtitle">{{ isFavorite() ? 'Volte à página inicial e escolha os melhores para você.' : 'Tente realizar uma nova busca.' }}</span>
+    @if(isFavorite()) {
+        <button class="c-container__button" (click)="onRedirect()" mat-raised-button color="primary">Voltar ao início</button>
+    }
+</section>

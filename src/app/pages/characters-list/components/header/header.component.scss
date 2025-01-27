@@ -1,0 +1,14 @@
+@import "../../../../../styles/typography";
+
+.c-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--measure-spacing-l);
+  &__title {
+    @include title;
+  }
+  &__input {
+    width: 328px;
+  }
+}

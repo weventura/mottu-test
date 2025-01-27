@@ -1,0 +1,7 @@
+@import '../../../styles/typography';
+
+.c-container {
+    &__title {
+        @include title;
+    }
+}

@@ -1,0 +1,27 @@
+<div [class]="['c-cards', !characters().length && 'c-cards--empty']">
+    @if(!isLoading()) {
+        @for (item of characters(); track $index) {
+            @defer {
+                <app-custom-card 
+                    [image]="item.image" 
+                    [title]="item.name" 
+                    [subtitle]="item.species" 
+                    [description]="item.type" 
+                    [isFavorite]="item.isFavorite"
+                    (onFavoriteClick)="onToggleFavorite(item)">
+                </app-custom-card>
+            }
+        } @empty {
+            <app-not-found [isFavorite]="isFavorite()"></app-not-found>
+        }
+    } @else {
+        @for (item of defaultLoadingCards; track $index) {
+            <app-custom-card [isLoading]="true"></app-custom-card>
+        }
+    }
+</div>
+@if(isLoadingMore()) {
+    <div class="c-loader">
+        <mat-spinner [diameter]="40"></mat-spinner>
+    </div>
+}

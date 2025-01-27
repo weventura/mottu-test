@@ -1,0 +1,11 @@
+.c-container {
+    max-width: 768px;
+    margin: 0 auto;
+    height: calc(100% - 68px);
+    padding: var(--measure-spacing-xxxl) var(--measure-spacing-l);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: var(--measure-spacing-xxxl);
+}

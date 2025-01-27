@@ -1,0 +1,8 @@
+<div class="c-container">
+    <span class="c-container__title">Favoritos</span>
+    <app-common-list 
+        [characters]="(characters$ | async) || []" 
+        (onFavoriteClick)="onFavoriteClick($event)"
+        [isFavorite]="true">
+    </app-common-list>
+</div>
